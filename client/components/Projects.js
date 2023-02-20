@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const Description = ({ projectName }) => {
   const projectInfo = {
@@ -46,9 +46,11 @@ const Description = ({ projectName }) => {
 
 const Projects = () => {
   const [projectDisplayed, setProject] = useState(null);
+  const descriptionBox = useRef(null);
 
   const handleDisplay = ({ target }) => {
     setProject(target.id);
+    descriptionBox.current.scrollTop = 0;
   };
 
   return (
@@ -88,7 +90,10 @@ const Projects = () => {
         </div>
       </div>
       <div id="project-description" className="w-fit h-fit rounded-r-[1em]">
-        <div className="relative overflow-box w-[30vw] max-w-[900px] h-[55vh]">
+        <div
+          className="relative overflow-box w-[30vw] max-w-[900px] h-[55vh]"
+          ref={descriptionBox}
+        >
           {projectDisplayed ? (
             <Description projectName={projectDisplayed} />
           ) : (
