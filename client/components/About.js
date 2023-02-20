@@ -85,7 +85,10 @@ const About = () => {
               lead to clutter, so using it in moderation is paramount in my
               opinion.
             </p>
-            <p>Bowser - </p>
+            <p>
+              Bowser - Determines the browser information to conditionally
+              render neat CSS effects only on browsers equipped to handle them.
+            </p>
           </div>
 
           <button
