@@ -31,7 +31,7 @@ const About = () => {
   return (
     <section className="fixed flex justify-center items-center w-full h-screen z-[30]">
       <div id="about-container" className="w-fit h-fit">
-        <div className="relative w-[75vw] max-w-[1000px] h-fit max-h-[60vh] text-[24px] overflow-box">
+        <div className="relative w-[75vw] max-w-[1000px] h-fit max-h-[50vh] text-[24px] overflow-box">
           <h1 className="text-center text-[40px]">About</h1>
           <p id="name" className="text-[24px]">
             Hi, I'm Kyul.

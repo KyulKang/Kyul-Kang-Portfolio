@@ -352,7 +352,7 @@ span {
   position: fixed;
   z-index: inherit;
   opacity: 0;
-  top: 20vh;
+  top: 13vh;
   background-color: rgba(52, 40, 65, 0.3);
   border-radius: 1.5em;
   padding: 2em;
