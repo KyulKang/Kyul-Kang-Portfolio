@@ -7,6 +7,10 @@
   src: url('ostrich-sans.ttf') format('truetype');
 }
 
+html {
+  height: 100%;
+}
+
 body,
 #app {
   background-color: #060b18;

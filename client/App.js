@@ -30,18 +30,18 @@ function App() {
 
   return (
     <Router history={history}>
-      {/* <div className={theme}> */}
-      <Navbar handleThemeChange={handleThemeChange} />
-      <Suspense fallback={<Loading />}>
-        {/* <Background theme={theme} /> */}
-        <Routes>
-          <Route exact path="/" element={<MainPage />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-      {/* </div> */}
+      <div className={theme}>
+        <Navbar handleThemeChange={handleThemeChange} />
+        <Suspense fallback={<Loading />}>
+          {/* <Background theme={theme} /> */}
+          <Routes>
+            <Route exact path="/" element={<MainPage />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Suspense>
+        <Footer />
+      </div>
     </Router>
   );
 }
