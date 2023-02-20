@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Background({ theme }) {
+function Background({ theme, browserName }) {
+  const hideEffects =
+    browserName !== 'Chrome' &&
+    browserName !== 'Opera' &&
+    window.innerWidth <= 767;
+
   const renderBg = () => {
     switch (theme) {
       case 'default':
@@ -27,7 +32,7 @@ function Background({ theme }) {
 
   return (
     <div id="background" className={theme}>
-      {renderBg()}
+      {hideEffects ? renderBg() : null}
     </div>
   );
 }

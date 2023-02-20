@@ -34,12 +34,9 @@ function App() {
   return (
     <Router history={history}>
       <div className={theme}>
-        <div className="h-screen w-screen bg-white">
-          {browser.getBrowserName()}
-        </div>
         <Navbar handleThemeChange={handleThemeChange} />
         <Suspense fallback={<Loading />}>
-          <Background theme={theme} />
+          <Background theme={theme} browserName={browser.getBrowserName()} />
           <Routes>
             <Route exact path="/" element={<MainPage />} />
             <Route path="/projects" element={<Projects />} />
