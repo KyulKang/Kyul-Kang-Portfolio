@@ -31,7 +31,7 @@ function Background({ theme, browserName }) {
   };
 
   return (
-    <div id="background" className={theme}>
+    <div id="background" className={`${theme} ${hideEffects ? 'hide-bg' : ''}`}>
       {hideEffects ? null : renderBg()}
     </div>
   );

@@ -81,6 +81,11 @@ span {
   z-index: 2;
 }
 
+#background.water.hide-bg,
+#background.water.hide-bg::after {
+  display: none;
+}
+
 /* Gradient mask */
 
 .water > #gradient-mask {
