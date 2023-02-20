@@ -557,8 +557,7 @@ section h1 {
 
   #projects-container,
   #project-description {
-    margin-left: 2vw;
-    margin-right: 2vw;
+    top: 0;
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.4em;
@@ -586,7 +585,7 @@ section h1 {
   }
 
   #project-description {
-    top: 4vh;
+    top: 2vh;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom-left-radius: 0em;
@@ -598,7 +597,6 @@ section h1 {
     border-top-right-radius: 0em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    bottom: 2vh;
   }
 
   #project-description .overflow-box {
