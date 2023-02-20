@@ -388,11 +388,13 @@ span {
 
 .desc {
   height: 0;
+  transform: scaleY(0);
   margin-top: 0.5em;
 }
 
 .desc.open {
   height: fit-content;
+  transform: scaleY(1);
 }
 
 .info > * {
