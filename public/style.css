@@ -14,6 +14,7 @@ body,
   color: lightblue;
   letter-spacing: 0.08em;
   user-select: none;
+  overflow-y: hidden;
   height: 100%;
 }
 
