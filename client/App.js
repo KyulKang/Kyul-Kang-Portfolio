@@ -21,18 +21,12 @@ function App() {
 
   useEffect(() => {
     setTheme(localStorage.getItem('background') || 'default');
-    window.addEventListener('resize', resetHeight);
-    resetHeight();
   }, []);
 
   const handleThemeChange = (bg) => {
     setTheme(bg);
     localStorage.setItem('background', bg);
   };
-
-  function resetHeight() {
-    document.body.style.height = window.innerHeight + 'px';
-  }
 
   return (
     <Router history={history}>
