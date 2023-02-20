@@ -86,8 +86,9 @@ const About = () => {
               opinion.
             </p>
             <p>
-              Bowser - Determines the browser information to conditionally
-              render neat CSS effects only on browsers equipped to handle them.
+              Bowser - Determines the browser information. It's used in this app
+              to conditionally render neat CSS effects only on browsers equipped
+              to handle them.
             </p>
           </div>
 
