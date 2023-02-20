@@ -48,7 +48,7 @@ function Sidebar({ handleThemeChange }) {
       </button>
       <div
         id="sidebar"
-        className={`flex justify-center items-center fixed top-0  h-full z-[45] ${
+        className={`flex justify-center items-center fixed top-0  h-screen z-[45] ${
           hidden ? '' : 'unhidden'
         }`}
         ref={menu}

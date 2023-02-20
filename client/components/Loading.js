@@ -4,7 +4,7 @@ function Loading() {
   return (
     <div
       id="loading-screen"
-      className={`absolute flex flex-col  w-full  h-full bg-inherit justify-center items-center z-[50]`}
+      className={`absolute flex flex-col  w-full  h-screen bg-inherit justify-center items-center z-[50]`}
     >
       <img
         src="./images/doublek.png"
