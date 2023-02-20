@@ -64,7 +64,6 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: coral;
   background-image: url('https://i.imgur.com/W1ZPyJb.jpg');
   background-size: cover;
   z-index: 0;
@@ -84,7 +83,7 @@ span {
 
 #background.water.hide-bg,
 #background.water.hide-bg::after {
-  display: none;
+  background-image: none;
 }
 
 /* Gradient mask */
