@@ -575,9 +575,9 @@ section h1 {
   }
 
   #projects-container img {
-    width: 40vw;
+    width: 45vw;
     max-width: 600px;
-    height: 32vw;
+    height: 36vw;
     max-height: 480px;
     margin-left: 1em;
     margin-right: 1em;
@@ -586,7 +586,7 @@ section h1 {
   }
 
   #project-description {
-    top: 7vh;
+    top: 4vh;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom-left-radius: 0em;
@@ -601,7 +601,7 @@ section h1 {
   }
 
   #project-description .overflow-box {
-    height: 33vh;
+    height: 36vh;
     flex-direction: column;
     overflow-y: scroll;
   }
