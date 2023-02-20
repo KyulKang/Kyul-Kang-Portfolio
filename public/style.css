@@ -523,7 +523,7 @@ section h1 {
 
   #sidebar.unhidden {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     transform: translateX(0);
   }
 
