@@ -31,7 +31,7 @@ module.exports = {
         test: /\.(ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: '[name][ext][query]',
+          filename: './public/[name][ext][query]',
         },
       },
     ],
