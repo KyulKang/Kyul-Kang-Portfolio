@@ -85,6 +85,7 @@ const About = () => {
               lead to clutter, so using it in moderation is paramount in my
               opinion.
             </p>
+            <p>Bowser - </p>
           </div>
 
           <button

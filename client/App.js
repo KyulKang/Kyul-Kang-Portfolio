@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createMemoryHistory, createBrowserHistory } from 'history';
+import Bowser from 'bowser';
 
 const MainPage = lazy(() => import('./components/MainPage'));
 const Projects = lazy(() => import('./components/Projects'));
@@ -15,6 +16,8 @@ const history =
   process.env.NODE_ENV === 'test'
     ? createMemoryHistory()
     : createBrowserHistory();
+
+const browser = Bowser.getParser(window.navigator.userAgent);
 
 function App() {
   const [theme, setTheme] = useState('default');
@@ -31,6 +34,9 @@ function App() {
   return (
     <Router history={history}>
       <div className={theme}>
+        <div className="h-screen w-screen bg-white">
+          {browser.getBrowserName()}
+        </div>
         <Navbar handleThemeChange={handleThemeChange} />
         <Suspense fallback={<Loading />}>
           <Background theme={theme} />

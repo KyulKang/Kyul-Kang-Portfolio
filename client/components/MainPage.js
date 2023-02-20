@@ -4,8 +4,8 @@ import TypeWriter from 'typewriter-effect';
 
 const MainPage = () => {
   return (
-    <section className="fixed flex flex-col items-center h-screen w-screen translate-y-[40vh] z-[30]">
-      <ul id="main-content" className="flex flex-col w-screen text-[26px]">
+    <section className="fixed flex flex-col items-center h-screen w-full translate-y-[40vh] z-[30]">
+      <ul id="main-content" className="flex flex-col  w-full text-[26px]">
         <li className="text-[30px]">Kyul Kang</li>
         <li>Software Engineer</li>
         <li>Web Developer</li>
