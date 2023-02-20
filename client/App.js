@@ -33,7 +33,7 @@ function App() {
       <div className={theme}>
         <Navbar handleThemeChange={handleThemeChange} />
         <Suspense fallback={<Loading />}>
-          <Background theme={theme} />
+          {/* <Background theme={theme} /> */}
           <Routes>
             <Route exact path="/" element={<MainPage />} />
             <Route path="/projects" element={<Projects />} />
