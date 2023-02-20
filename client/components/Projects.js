@@ -56,7 +56,7 @@ const Projects = () => {
   return (
     <section
       id="projects-page"
-      className="flex absolute justify-center items-center w-screen h-screen z-[30]"
+      className="flex absolute justify-center items-center  w-full  h-full z-[30]"
     >
       <h1 className="absolute font-bold translate-x-[-50%] translate-y-[-50%] left-1/2 text-[2.5em]">
         Projects

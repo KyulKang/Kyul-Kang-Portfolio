@@ -19,7 +19,7 @@ function Footer() {
   return (
     <div
       id="footer-container"
-      className="fixed bottom-0 w-screen max-w-[730px] z-[35] overflow-hidden left-1/2 translate-x-[-50%]"
+      className="fixed bottom-0  w-full max-w-[730px] z-[35] overflow-hidden left-1/2 translate-x-[-50%]"
     >
       <div id="footer" className="w-fit justify-center items-center">
         {[...Array(6)].map((elem, i) => (
