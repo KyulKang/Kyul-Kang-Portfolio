@@ -12,7 +12,6 @@ function Navbar(props) {
           id="logo"
           className="fixed w-[50px] h-[50px] left-5 top-5"
           src="./images/doublek.png"
-          data-type="foreground"
         ></img>
       </Link>
       <Sidebar handleThemeChange={handleThemeChange} />

@@ -28,21 +28,14 @@ const MainPage = () => {
           />
         </li>
       </ul>
-      <button
-        id="portfolio-link"
-        className="flex items-center justify-center w-fit h-fit mb-2"
-        data-type="foreground"
-      >
-        <Link to="/projects" className="text-[28px] font-bold">
+
+      <button className="flex items-center justify-center w-fit h-fit mb-2 portfolio-link">
+        <Link to="/projects" className="text-[28px] hover:font-bold">
           My Portfolio
         </Link>
       </button>
-      <button
-        id="portfolio-link"
-        className="flex items-center justify-center w-fit h-fit"
-        data-type="foreground"
-      >
-        <Link to="/about" className="text-[28px] font-bold">
+      <button className="flex items-center justify-center w-fit h-fit portfolio-link">
+        <Link to="/about" className="text-[28px] hover:font-bold">
           About
         </Link>
       </button>

@@ -40,7 +40,6 @@ const About = () => {
           <button
             onClick={() => handleOpen('about-me')}
             className="text-[28px] font-medium hover:font-bold text-left"
-            data-type="foreground"
           >
             ▸ Who am I?
           </button>
@@ -70,7 +69,6 @@ const About = () => {
           <button
             onClick={() => handleOpen('about-site')}
             className="text-[28px] font-medium hover:font-bold text-left"
-            data-type="foreground"
           >
             ▸ Stack used for this web app
           </button>
@@ -92,7 +90,6 @@ const About = () => {
           <button
             onClick={() => handleOpen('contact-me')}
             className="text-[28px] font-medium hover:font-bold text-left"
-            data-type="foreground"
           >
             ▸ Contact me
           </button>

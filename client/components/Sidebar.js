@@ -44,11 +44,7 @@ function Sidebar({ handleThemeChange }) {
         className="fixed right-5 top-5 z-[46]"
         ref={button}
       >
-        <img
-          src="./images/menu.png"
-          className="w-[30px] h-[30px]"
-          data-type="foreground"
-        />
+        <img src="./images/menu.png" className="w-[30px] h-[30px]" />
       </button>
       <div
         id="sidebar"
@@ -56,7 +52,6 @@ function Sidebar({ handleThemeChange }) {
           hidden ? '' : 'unhidden'
         }`}
         ref={menu}
-        data-type="foreground"
       >
         <div className="relative flex flex-col items-center w-[100%] text-[2.5em]">
           <Link to="/projects" onClick={handleMenu}>

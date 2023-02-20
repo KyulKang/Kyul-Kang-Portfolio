@@ -28,6 +28,11 @@ section > div {
   margin-top: 1em;
 }
 
+p,
+span {
+  text-shadow: -2px 2px 2px black;
+}
+
 /* Background color */
 
 /* DEFAULT */
@@ -130,7 +135,7 @@ section > div {
   box-shadow: 0px 0px 20px #bb0183, inset 0px 0px 20px #bb0183,
     0px 0px 60px #01039b, inset 0px 0px 60px #01039b;
 
-  animation: breathing 4s linear infinite;
+  animation: blinking 4s linear infinite;
 }
 
 @keyframes rotate {
@@ -142,27 +147,30 @@ section > div {
   }
 }
 
-@keyframes breathing {
+@keyframes zooming {
   0% {
-    filter: brightness(1.5) contrast(2.7) hue-rotate(-30deg);
+    perspective: 55px;
   }
   50% {
-    filter: brightness(1.2) contrast(1.5) hue-rotate(30deg);
+    perspective: 80px;
   }
   100% {
-    filter: brightness(1.7) contrast(3) hue-rotate(-30deg);
+    perspective: 55px;
   }
 }
 
-@keyframes zooming {
+@keyframes blinking {
   0% {
-    perspective: 45px;
+    filter: brightness(1.5) contrast(2.7) hue-rotate(-30deg);
+    opacity: 1;
   }
   50% {
-    perspective: 50px;
+    filter: brightness(1.2) contrast(1.5) hue-rotate(30deg);
+    opacity: 0.1;
   }
   100% {
-    perspective: 45px;
+    filter: brightness(1.7) contrast(3) hue-rotate(-30deg);
+    opacity: 1;
   }
 }
 
@@ -242,32 +250,6 @@ section > div {
   transform: translateX(40vw);
 }
 
-@keyframes hide {
-  from {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.1);
-    transform: translateX(40vw);
-  }
-  to {
-    opacity: 0;
-    background: rgba(0, 0, 0, 0);
-    transform: translateX(100vw);
-  }
-}
-
-@keyframes unhide {
-  from {
-    opacity: 0;
-    background: rgba(0, 0, 0, 0);
-    transform: translateX(100vw);
-  }
-  to {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.1);
-    transform: translateX(40vw);
-  }
-}
-
 /* Theme buttons */
 
 .default .theme-button {
@@ -307,22 +289,33 @@ section > div {
 /* Main page */
 
 #main-content > li {
-  width: 100vw;
+  text-shadow: -2px 2px 2px black;
+  width: fit-content;
   transform: translate(25vw, -10vh);
 }
 
-#portfolio-link {
+.portfolio-link {
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   border-radius: 1em;
-  background-color: rgba(173, 216, 230, 0.1);
+  background-color: rgba(50, 50, 50, 0.25);
+  transition: 0.2s;
+  box-shadow: -2px -2px 1px 0px rgba(155, 155, 155, 0.75);
+}
+
+.portfolio-link:hover {
+  background-color: rgba(50, 50, 50, 0.4);
+}
+
+.water .portfolio-link {
+  background-color: rgba(0, 0, 0, 0.25);
   transition: 0.2s;
 }
 
-#portfolio-link:hover {
-  background-color: rgba(173, 216, 230, 0.15);
+.water .portfolio-link:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Footer scrolling animation and properties */
@@ -366,7 +359,7 @@ section > div {
   position: fixed;
   z-index: inherit;
   opacity: 0;
-  background-color: rgba(52, 40, 65, 0.2);
+  background-color: rgba(52, 40, 65, 0.3);
   border-radius: 1.5em;
   padding: 2em;
   animation: fadeIn 0.5s ease-out forwards;
@@ -404,12 +397,14 @@ section > div {
   margin-top: 0.5em;
   transform: scaleY(0);
   opacity: 0;
+  transition: 0.2s ease-in-out;
 }
 
 .desc.open {
   height: fit-content;
+  transform: scaleY(1);
+  opacity: 1;
   transform-origin: top;
-  animation: fadeIn 0.3s ease-out 0.3s forwards, expand 0.5s ease-out forwards;
 }
 
 .info > * {
@@ -424,8 +419,11 @@ section > div {
   font-weight: 600;
 }
 
+/* Custom Scrollbar */
+
 *::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
+  height: 3px;
 }
 
 *::-webkit-scrollbar-track {
@@ -447,7 +445,7 @@ section > div {
 #project-description {
   position: relative;
   top: 5vh;
-  background-color: rgba(52, 40, 65, 0.2);
+  background-color: rgba(52, 40, 65, 0.3);
   padding: 2em;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -483,6 +481,7 @@ section > div {
 
 section h1 {
   text-shadow: -2px 2px 6px rgb(52, 40, 65);
+  top: 16vh;
 }
 
 .water section h1 {
@@ -509,15 +508,6 @@ section h1 {
   }
 }
 
-@keyframes expand {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
 /* For smaller viewport */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -526,55 +516,20 @@ section h1 {
     width: 100vw;
     background: rgba(0, 0, 0, 0);
     transform: translateX(100vw);
-    backdrop-filter: blur(0);
     box-shadow: -5px 0px 20px 10px rgb(20 20 20 / 20%);
     transition: 0.3s;
   }
 
   #sidebar.unhidden {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     transform: translateX(0);
-  }
-
-  @keyframes hide {
-    from {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.1);
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      background: rgba(0, 0, 0, 0);
-      transform: translateX(100vw);
-    }
-  }
-
-  @keyframes unhide {
-    from {
-      opacity: 0;
-      background: rgba(0, 0, 0, 0);
-      transform: translateX(100vw);
-    }
-    to {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.1);
-      transform: translateX(0);
-    }
   }
 
   /* Center main page text content */
 
   #main-content > li {
     transform: translate(10vw, -10vh);
-  }
-
-  /* Infinity mirror effect */
-
-  .frame {
-    width: 130vw;
-    height: 130vw;
   }
 
   /* About Page */
@@ -584,6 +539,10 @@ section h1 {
   }
 
   /* Projects Page */
+
+  section h1 {
+    top: 13vh;
+  }
 
   #projects-page {
     flex-direction: column-reverse;
@@ -621,7 +580,7 @@ section h1 {
   }
 
   #project-description {
-    top: 8vh;
+    top: 7vh;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom-left-radius: 0em;
@@ -636,27 +595,25 @@ section h1 {
   }
 
   #project-description .overflow-box {
-    height: 30vh;
+    height: 33vh;
     flex-direction: column;
     overflow-y: scroll;
   }
 
   #project-description .overflow-box * {
     margin-top: 0em;
-    margin-bottom: 0em;
+    margin-bottom: 0.5em;
+  }
+
+  #project-description .overflow-box h2 {
+    font-size: 28px;
+  }
+
+  #project-description .overflow-box p {
+    font-size: 22px;
   }
 
   #projects-container .overflow-box {
     height: fit-content;
-  }
-
-  *::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  #about {
-    font-size: 22px;
-    width: 70vw;
-    height: 65vh;
   }
 }

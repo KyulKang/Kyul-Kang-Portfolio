@@ -24,10 +24,10 @@ const Description = ({ projectName }) => {
 
   return (
     <>
-      <h2 className="text-center text-[40px] mb-4">
+      <h2 className="text-center text-[34px] mb-2">
         {projectInfo[projectName].title}
       </h2>
-      <p className="text-center text-[24px] my-4">
+      <p className="text-center text-[24px] my-2">
         {projectInfo[projectName].description}
       </p>
 
@@ -35,7 +35,7 @@ const Description = ({ projectName }) => {
         <span className="text-center text-[24px] tracking-wider">Link: </span>
         <button
           onClick={() => window.open(projectInfo[projectName].link)}
-          className="text-[24px] hover:font-bold tracking-wider"
+          className="text-[24px] underline hover:font-bold tracking-wider"
         >
           {projectInfo[projectName].link}
         </button>
@@ -56,7 +56,7 @@ const Projects = () => {
       id="projects-page"
       className="flex absolute justify-center items-center w-screen h-screen z-[30]"
     >
-      <h1 className="absolute font-bold translate-x-[-50%] translate-y-[-50%] left-1/2 top-[16vh] text-[2.5em]">
+      <h1 className="absolute font-bold translate-x-[-50%] translate-y-[-50%] left-1/2 text-[2.5em]">
         Projects
       </h1>
       <div id="projects-container" className="w-fit h-fit rounded-l-[1em]">
@@ -68,7 +68,6 @@ const Projects = () => {
             }
             onClick={handleDisplay}
             src="./images/grace-shopper.jpg"
-            data-type="foreground"
           />
           <img
             id="fullFreak"
@@ -77,7 +76,6 @@ const Projects = () => {
             }
             onClick={handleDisplay}
             src="./images/fullfreak.jpg"
-            data-type="foreground"
           />
           <img
             id="firefly"
@@ -86,7 +84,6 @@ const Projects = () => {
             }
             onClick={handleDisplay}
             src="./images/firefly.jpg"
-            data-type="foreground"
           />
         </div>
       </div>
@@ -94,7 +91,11 @@ const Projects = () => {
         <div className="relative overflow-box w-[30vw] max-w-[900px] h-[55vh]">
           {projectDisplayed ? (
             <Description projectName={projectDisplayed} />
-          ) : null}
+          ) : (
+            <p className="relative text-center text-[24px] top-[3vh]">
+              Select a project to see its description!
+            </p>
+          )}
         </div>
       </div>
     </section>
