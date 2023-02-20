@@ -32,7 +32,7 @@ function Background({ theme, browserName }) {
 
   return (
     <div id="background" className={theme}>
-      {hideEffects ? renderBg() : null}
+      {hideEffects ? null : renderBg()}
     </div>
   );
 }
