@@ -4,9 +4,9 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 
 const MainPage = lazy(() => import('./components/MainPage'));
 const Projects = lazy(() => import('./components/Projects'));
-const Background = lazy(() => import('./components/Background'));
 const About = lazy(() => import('./components/About'));
 
+import Background from './components/Background';
 import Loading from './components/Loading';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
