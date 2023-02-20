@@ -30,11 +30,20 @@ const MainPage = () => {
       </ul>
       <button
         id="portfolio-link"
-        className="flex items-center justify-center w-fit h-fit"
+        className="flex items-center justify-center w-fit h-fit mb-2"
         data-type="foreground"
       >
         <Link to="/projects" className="text-[28px] font-bold">
           My Portfolio
+        </Link>
+      </button>
+      <button
+        id="portfolio-link"
+        className="flex items-center justify-center w-fit h-fit"
+        data-type="foreground"
+      >
+        <Link to="/about" className="text-[28px] font-bold">
+          About
         </Link>
       </button>
     </section>
