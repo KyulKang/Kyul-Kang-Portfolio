@@ -7,15 +7,19 @@
   src: url('ostrich-sans.ttf') format('truetype');
 }
 
+html,
 body,
 #app {
+  position: fixed;
   background-color: #060b18;
   font-family: 'ostrich_sans';
   color: lightblue;
   letter-spacing: 0.08em;
   user-select: none;
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 /* Content */
