@@ -32,10 +32,10 @@ const Description = ({ projectName }) => {
       </p>
 
       <div className="text-center">
-        <span className="text-center text-[24px] tracking-wider">Link: </span>
+        <span className="text-center text-[22px] tracking-wider">Link: </span>
         <button
           onClick={() => window.open(projectInfo[projectName].link)}
-          className="text-[24px] underline hover:font-bold tracking-wider"
+          className="text-[22px] underline hover:font-bold tracking-wider"
         >
           {projectInfo[projectName].link}
         </button>

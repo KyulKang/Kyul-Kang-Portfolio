@@ -6,7 +6,7 @@ function Background({ theme }) {
       case 'default':
         return (
           <div id="frame-container">
-            {[...Array(10)].map((frame, i) => (
+            {[...Array(7)].map((frame, i) => (
               <div
                 key={i}
                 className="frame"
@@ -20,12 +20,13 @@ function Background({ theme }) {
             ))}
           </div>
         );
+      case 'water':
+        return <div id="gradient-mask" />;
     }
   };
 
   return (
     <div id="background" className={theme}>
-      <div id="gradient-mask" />
       {renderBg()}
     </div>
   );
