@@ -164,7 +164,7 @@ span {
   }
   50% {
     filter: brightness(1.2) contrast(1.5) hue-rotate(30deg);
-    opacity: 0.4;
+    opacity: 0.25;
   }
   100% {
     filter: brightness(1.7) contrast(3) hue-rotate(-30deg);
